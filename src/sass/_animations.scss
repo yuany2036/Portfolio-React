@@ -1,0 +1,21 @@
+@use "variables" as *;
+// @use "sass:math";
+
+$span-count: 9;
+
+@keyframes lighting {
+    0% {
+        color: $tertiary-color;
+        text-shadow: 0px 0px 40px $primary-color;
+    }
+    30% {
+        color: $primary-color;
+        text-shadow: none;
+    }
+}
+
+@for $i from 1 through $span-count {
+    #section_main span:nth-of-type(#{$i}) {
+        animation-delay: #{$i/10}s;
+    }
+}
